@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicScore", "MusicScore\MusicScore.csproj", "{A03E1770-48D3-4630-87BB-09B599B60D54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrintSocre", "PrintSocre", "{FD3B91A8-DE6B-4909-A35E-81CAFD6F7588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintScore", "ConsoleApplication1\PrintScore.csproj", "{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{A03E1770-48D3-4630-87BB-09B599B60D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03E1770-48D3-4630-87BB-09B599B60D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03E1770-48D3-4630-87BB-09B599B60D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F6DC90D-16AF-45D5-9D3E-8F4053422B7D} = {FD3B91A8-DE6B-4909-A35E-81CAFD6F7588}
 	EndGlobalSection
 EndGlobal
