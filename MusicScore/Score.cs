@@ -16,6 +16,58 @@ namespace MusicScore
             internal set { _parts = value; }
         }
 
+        // Retorna parte (instrumento) que toca a menor quantidade de notas
+        public Part LeastActive() {
+            Part result = null;
+            int reference = int.MaxValue;
+            int count;
+
+            foreach (Part part in _parts) {
+                count = 0;
+
+                foreach (Measure measure in part.Measures) {
+                    foreach (MeasureElement element in measure.Elements) {
+                        if (element.Type != MeasureElementType.Rest) {
+                            count++;
+                        }
+                    }
+                }
+
+                if (count < reference) {
+                    reference = count;
+                    result = part;
+                }
+            }
+
+            return result;
+        }
+
+        // Retorna parte (instrumento) que toca a maior quantidade de notas
+        public Part MostActive() {
+            Part result = null;
+            int reference = int.MinValue;
+            int count;
+
+            foreach (Part part in _parts) {
+                count = 0;
+
+                foreach (Measure measure in part.Measures) {
+                    foreach (MeasureElement element in measure.Elements) {
+                        if (element.Type != MeasureElementType.Rest) {
+                            count++;
+                        }
+                    }
+                }
+
+                if (count > reference) {
+                    reference = count;
+                    result = part;
+                }
+            }
+
+            return result;
+        }
+
         internal void AddPart(Part prt) {
 
             if(_parts == null) {
