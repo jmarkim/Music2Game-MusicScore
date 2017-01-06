@@ -42,6 +42,34 @@ namespace MusicScore
             return result;
         }
 
+        public int LeastActiveIndex() {
+            int result = -1;
+            int reference = int.MaxValue;
+            int count;
+            int partCount = 0;
+
+            foreach (Part part in _parts) {
+                count = 0;
+
+                foreach (Measure measure in part.Measures) {
+                    foreach (MeasureElement element in measure.Elements) {
+                        if (element.Type != MeasureElementType.Rest) {
+                            count++;
+                        }
+                    }
+                }
+
+                if (count < reference) {
+                    reference = count;
+                    result = partCount;
+                }
+
+                partCount++;
+            }
+
+            return result;
+        }
+
         // Retorna parte (instrumento) que toca a maior quantidade de notas
         public Part MostActive() {
             Part result = null;
@@ -63,6 +91,34 @@ namespace MusicScore
                     reference = count;
                     result = part;
                 }
+            }
+
+            return result;
+        }
+
+        public int MostActiveIndex() {
+            int result = -1;
+            int reference = int.MinValue;
+            int count;
+            int partCount = 0;
+
+            foreach (Part part in _parts) {
+                count = 0;
+
+                foreach (Measure measure in part.Measures) {
+                    foreach (MeasureElement element in measure.Elements) {
+                        if (element.Type != MeasureElementType.Rest) {
+                            count++;
+                        }
+                    }
+                }
+
+                if (count > reference) {
+                    reference = count;
+                    result = partCount;
+                }
+
+                partCount++;
             }
 
             return result;

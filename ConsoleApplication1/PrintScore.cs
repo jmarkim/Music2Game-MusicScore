@@ -12,6 +12,11 @@ namespace PrintScore {
             string name = args[0].Remove(args[0].Length - 4);
             score.PrintPartWise(name + "_PARTWISE.txt");
             score.PrintTimeWise(name + "_TIMEWISE.txt");
+
+            Console.WriteLine("Mais ativo : {0}", score.MostActiveIndex());
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Menos ativo : {0}", score.LeastActiveIndex());
         }
     }
 }
