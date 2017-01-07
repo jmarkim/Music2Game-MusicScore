@@ -110,7 +110,35 @@ namespace MusicScore {
                 default:
                     return -1;
             }
-        } 
+        }
+        
+        public static int RoleToInt(Scale role) {
+            switch (role) {
+                case Scale.Tonic:
+                    return 0;
+
+                case Scale.Supertonic:
+                    return 1;
+
+                case Scale.Mediant:
+                    return 2;
+
+                case Scale.Subdominant:
+                    return 3;
+
+                case Scale.Dominant:
+                    return 4;
+
+                case Scale.Submediant:
+                    return 5;
+
+                case Scale.Subtonic:
+                    return 6;
+
+                default:
+                    return -1;
+            }
+        }
     }
 
     public enum Pitches {
