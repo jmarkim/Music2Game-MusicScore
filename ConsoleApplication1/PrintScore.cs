@@ -14,9 +14,11 @@ namespace PrintScore {
             score.PrintTimeWise(name + "_TIMEWISE.txt");
 
             Console.WriteLine("Mais ativo : {0}", score.MostActiveIndex());
+            Console.WriteLine("Mais ativo (pausas) : {0}", score.MostActiveIndex(true));
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Menos ativo : {0}", score.LeastActiveIndex());
+            Console.WriteLine("Menos ativo (pausas) : {0}", score.LeastActiveIndex(true));
         }
     }
 }

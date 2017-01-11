@@ -17,7 +17,7 @@ namespace MusicScore
         }
 
         // Retorna parte (instrumento) que toca a menor quantidade de notas
-        public Part LeastActive() {
+        public Part LeastActive(bool countRests = false) {
             Part result = null;
             int reference = int.MaxValue;
             int count;
@@ -27,7 +27,9 @@ namespace MusicScore
 
                 foreach (Measure measure in part.Measures) {
                     foreach (MeasureElement element in measure.Elements) {
-                        if (element.Type != MeasureElementType.Rest) {
+                        if (element.Type != MeasureElementType.Rest && !countRests) {
+                            count++;
+                        } else if (element.Type == MeasureElementType.Rest && countRests) {
                             count++;
                         }
                     }
@@ -42,7 +44,7 @@ namespace MusicScore
             return result;
         }
 
-        public int LeastActiveIndex() {
+        public int LeastActiveIndex(bool countRests = false) {
             int result = -1;
             int reference = int.MaxValue;
             int count;
@@ -53,7 +55,9 @@ namespace MusicScore
 
                 foreach (Measure measure in part.Measures) {
                     foreach (MeasureElement element in measure.Elements) {
-                        if (element.Type != MeasureElementType.Rest) {
+                        if (element.Type != MeasureElementType.Rest && !countRests) {
+                            count++;
+                        } else if (element.Type == MeasureElementType.Rest && countRests) {
                             count++;
                         }
                     }
@@ -71,7 +75,7 @@ namespace MusicScore
         }
 
         // Retorna parte (instrumento) que toca a maior quantidade de notas
-        public Part MostActive() {
+        public Part MostActive(bool countRests = false) {
             Part result = null;
             int reference = int.MinValue;
             int count;
@@ -81,7 +85,9 @@ namespace MusicScore
 
                 foreach (Measure measure in part.Measures) {
                     foreach (MeasureElement element in measure.Elements) {
-                        if (element.Type != MeasureElementType.Rest) {
+                        if (element.Type != MeasureElementType.Rest && !countRests) {
+                            count++;
+                        } else if (element.Type == MeasureElementType.Rest && countRests) {
                             count++;
                         }
                     }
@@ -96,7 +102,7 @@ namespace MusicScore
             return result;
         }
 
-        public int MostActiveIndex() {
+        public int MostActiveIndex(bool countRests = false) {
             int result = -1;
             int reference = int.MinValue;
             int count;
@@ -107,7 +113,9 @@ namespace MusicScore
 
                 foreach (Measure measure in part.Measures) {
                     foreach (MeasureElement element in measure.Elements) {
-                        if (element.Type != MeasureElementType.Rest) {
+                        if (element.Type != MeasureElementType.Rest && !countRests) {
+                            count++;
+                        } else if (element.Type == MeasureElementType.Rest && countRests) {
                             count++;
                         }
                     }
