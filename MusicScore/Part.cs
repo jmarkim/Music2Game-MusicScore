@@ -21,5 +21,22 @@ namespace MusicScore {
             }
             _measures.Add(msr);
         }
+
+        public int CountRole(Scale role) {
+            int count = 0;
+
+            foreach(var measure in _measures) {
+                foreach(var note in measure.Elements) {
+                    if (note.IsRest()) {
+                        continue;
+                    }
+                    if (note.Note.Role == role) {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
     }
 }

@@ -19,6 +19,14 @@ namespace PrintScore {
             Console.WriteLine();
             Console.WriteLine("Menos ativo : {0}", score.LeastActiveIndex());
             Console.WriteLine("Menos ativo (pausas) : {0}", score.LeastActiveIndex(true));
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("RoleCounts :");
+            List<int> counts = score.RoleCounts();
+            foreach ( var num in counts) {
+                Console.Write(" {0}", num);
+            }
+            Console.WriteLine();
         }
     }
 }

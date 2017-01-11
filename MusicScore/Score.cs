@@ -44,6 +44,55 @@ namespace MusicScore
             return result;
         }
 
+        public List<int> RoleCounts() {
+            List<int> count = new List<int>(7);
+            int roleCount;
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Tonic);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Supertonic);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Mediant);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Subdominant);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Dominant);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Submediant);
+            }
+            count.Add(roleCount);
+
+            roleCount = 0;
+            foreach (var part in _parts) {
+                roleCount += part.CountRole(Scale.Subtonic);
+            }
+            count.Add(roleCount);
+
+            return count;
+        }
+
         public int LeastActiveIndex(bool countRests = false) {
             int result = -1;
             int reference = int.MaxValue;
