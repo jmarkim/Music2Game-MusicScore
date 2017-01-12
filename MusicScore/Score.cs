@@ -9,11 +9,40 @@ namespace MusicScore
 {
     public class Score {
 
-        //Parts :: Lista de instrumentos ou partes que compoem a Música
+        // Parts :: Lista de instrumentos ou partes que compoem a Música
         private List<Part> _parts;
         public List<Part> Parts {
             get { return _parts; }
             internal set { _parts = value; }
+        }
+
+        // Quantidade de Compassos da música
+        private int _measuresCount;
+        public int MeasureCount {
+            get {
+                if ( _measuresCount < 0) {
+                    _measuresCount = _parts[0].Measures.Count;
+                }
+                return _measuresCount;
+            }
+        }
+
+        // Quantidade de instrumentos da música
+        private int _partCount;
+        public int PartCount {
+            get {
+                if (_partCount < 0) {
+                    _partCount = _parts.Count;
+                }
+                return _partCount;
+            }
+        }
+
+        // Construtor
+        public Score() {
+            _parts = new List<Part>();
+            _measuresCount = -1;
+            _partCount = -1;
         }
 
         // Retorna parte (instrumento) que toca a menor quantidade de notas

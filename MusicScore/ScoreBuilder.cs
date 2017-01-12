@@ -14,7 +14,7 @@ namespace MusicScore {
         //Constrói objeto Score a partir de um musicXML
         public static Score FromXML(string musicXML) {
             Score score = new Score();
-            score.Parts = new List<Part>();
+            //score.Parts = new List<Part>();
 
             MusicXml.Domain.Score  xmlScore = MusicXmlParser.GetScore(musicXML);
 
