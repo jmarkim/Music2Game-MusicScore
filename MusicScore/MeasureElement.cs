@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicScore {
-    public class MeasureElement {
+    public class MeasureElement /*: IComparable*/ {
 
         //Position :: Indica a posição do Elemento no compasso
         private int _position;
@@ -73,6 +73,9 @@ namespace MusicScore {
             return s;
         }
 
+        //public int CompareTo(object obj) {
+        //    return _position.CompareTo(obj);
+        //}
     }
 
     public enum MeasureElementType {

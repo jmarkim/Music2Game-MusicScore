@@ -65,6 +65,19 @@ namespace MusicScore {
             _elements.Add(element);
         }
 
+        public bool IsFull() {
+            int sum = 0;
+
+            foreach (var elmnt in Elements) {
+                if (elmnt.Type == MeasureElementType.Chord) {
+                    continue;
+                }
+                sum += elmnt.Duration;
+            }
+
+            return sum >= 0.97 * _size;
+        }
+
         internal bool Validate(int measureNumber) {
             int sum = 0;
             int positionCounter = 0;
